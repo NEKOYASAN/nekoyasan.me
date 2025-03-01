@@ -78,8 +78,8 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 w-72 rounded-full bg-gray-400'} />
-								<div className={'h-3 w-20 rounded-full bg-gray-600'} />
+								<div className={'h-4 max-w-72 w-[50vw] rounded-full bg-gray-400'} />
+								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
 							</div>
 						</div>
 						<div className={'group flex items-center gap-4'}>
@@ -102,8 +102,8 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 w-96 rounded-full bg-gray-400'} />
-								<div className={'h-3 w-20 rounded-full bg-gray-600'} />
+								<div className={'h-4 max-w-96 w-[62vw] rounded-full bg-gray-400'} />
+								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
 							</div>
 						</div>
 						<div className={'group flex items-center gap-4'}>
@@ -126,8 +126,8 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 w-42 rounded-full bg-gray-400'} />
-								<div className={'h-3 w-20 rounded-full bg-gray-600'} />
+								<div className={'h-4 max-w-42 w-[42vw] rounded-full bg-gray-400'} />
+								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
 							</div>
 						</div>
 						{/*Object.entries(posts).map(([path, { frontmatter }]) => {
@@ -244,7 +244,6 @@ export default createRoute((c) => {
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								xml:space="preserve"
 								viewBox="0 0 248 204"
 							>
 								<title>Twitter</title>
@@ -271,13 +270,8 @@ export default createRoute((c) => {
 							}
 						>
 							<svg
-								version="1.1"
 								xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink"
-								x="0px"
-								y="0px"
 								viewBox="0 0 88.3 88.3"
-								xml:space="preserve"
 							>
 								<title>Zenn</title>
 								<path
