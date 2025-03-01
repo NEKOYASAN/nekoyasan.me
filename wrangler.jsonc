@@ -1,0 +1,21 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "nekoyasan-me",
+	"main": "dist/index.js",
+	"no_bundle": true,
+	"compatibility_date": "2025-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"placement": {
+		"mode": "smart"
+	},
+	"routes": [
+		{
+			"pattern": "www.nekoyasan.me",
+			"custom_domain": true
+		}
+	],
+	"assets": {
+		"directory": "dist",
+		"binding": "STATIC_ASSETS"
+	}
+}

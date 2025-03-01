@@ -1,0 +1,6 @@
+@import "tailwindcss" source("../app");
+
+@theme {
+	--color-text: oklch(0.97 0.01 278.03 / 0.8);
+	--font-montserrat: "Montserrat", sans-serif;
+}
