@@ -78,8 +78,12 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 max-w-72 w-[50vw] rounded-full bg-gray-400'} />
-								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
+								<div
+									className={'h-4 w-[50vw] max-w-72 rounded-full bg-gray-400'}
+								/>
+								<div
+									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
+								/>
 							</div>
 						</div>
 						<div className={'group flex items-center gap-4'}>
@@ -102,8 +106,12 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 max-w-96 w-[62vw] rounded-full bg-gray-400'} />
-								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
+								<div
+									className={'h-4 w-[62vw] max-w-96 rounded-full bg-gray-400'}
+								/>
+								<div
+									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
+								/>
 							</div>
 						</div>
 						<div className={'group flex items-center gap-4'}>
@@ -126,8 +134,12 @@ export default createRoute((c) => {
 								</svg>
 							</div>
 							<div className={'flex flex-col gap-2'}>
-								<div className={'h-4 max-w-42 w-[42vw] rounded-full bg-gray-400'} />
-								<div className={'h-3 max-w-20 w-[20vw] rounded-full bg-gray-600'} />
+								<div
+									className={'h-4 w-[42vw] max-w-42 rounded-full bg-gray-400'}
+								/>
+								<div
+									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
+								/>
 							</div>
 						</div>
 						{/*Object.entries(posts).map(([path, { frontmatter }]) => {
@@ -216,7 +228,11 @@ export default createRoute((c) => {
 								'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-[#ffffff] transition-[outline] group-hover:outline-2'
 							}
 						>
-							<svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+							<svg
+								viewBox="0 0 98 96"
+								xmlns="http://www.w3.org/2000/svg"
+								class={'h-full w-full'}
+							>
 								<title>GitHub</title>
 								<path
 									fill-rule="evenodd"
@@ -245,6 +261,7 @@ export default createRoute((c) => {
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 248 204"
+								class={'h-full w-full'}
 							>
 								<title>Twitter</title>
 								<path
@@ -272,6 +289,7 @@ export default createRoute((c) => {
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 88.3 88.3"
+								class={'h-full w-full'}
 							>
 								<title>Zenn</title>
 								<path
