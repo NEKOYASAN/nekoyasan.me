@@ -10,7 +10,7 @@ export default jsxRenderer(({ children }) => {
 				<title>nekoyasan</title>
 				<link rel="icon" href="/favicon.ico" />
 				<link
-					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
 					rel="stylesheet"
 				/>
 				<meta name={'twitter:card'} content={'summary'} />

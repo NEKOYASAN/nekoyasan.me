@@ -20,6 +20,8 @@ export default defineConfig({
 				remarkMdxFrontmatter,
 				remarkMdxReadingTime,
 			],
+			elementAttributeNameCase: 'react',
+			providerImportSource: '/app/components/MDXComponents/MDXComponents.tsx',
 		}),
 	],
 });

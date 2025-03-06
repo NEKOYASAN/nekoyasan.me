@@ -35,7 +35,7 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 		);
 	}
 	return (
-		<html lang="ja">
+		<html lang="ja" class={'scroll-pt-16'}>
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,14 +49,14 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 					}
 				/>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
 					rel="stylesheet"
 				/>
 				<Link href="/app/style.css" rel="stylesheet" />
 				<Script src="/app/client.ts" async />
 			</head>
 			<body class={'bg-gray-900 text-gray-200'}>
-				<header class={'sticky top-0 w-full py-6'}>
+				<header class={'sticky top-0 z-50 w-full bg-gray-900 py-6'}>
 					<div
 						className={
 							'mx-auto flex max-w-3xl items-center gap-2 px-4 font-semibold sm:px-6'
@@ -106,7 +106,9 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 						style={`background-color: ${frontmatter.color}`}
 					/>
 				</div>
-				<div class={'mx-auto my-8 max-w-3xl px-4 sm:px-6'}>{children}</div>
+				<div class={'mx-auto my-16 max-w-3xl px-4 font-mixed sm:px-6'}>
+					{children}
+				</div>
 				<footer
 					class={
 						'my-8 text-center font-medium font-montserrat text-gray-400 text-sm'

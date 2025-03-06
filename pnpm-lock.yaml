@@ -36,6 +36,9 @@ importers:
       '@hono/vite-dev-server':
         specifier: ^0.18.2
         version: 0.18.2(hono@4.7.2)(miniflare@3.20250214.0)(wrangler@3.109.2(@cloudflare/workers-types@4.20250214.0))
+      '@mdx-js/mdx':
+        specifier: ^3.1.0
+        version: 3.1.0(acorn@8.14.0)
       '@mdx-js/rollup':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.14.0)(rollup@4.34.8)

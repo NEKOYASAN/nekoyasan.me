@@ -3,4 +3,6 @@
 @theme {
 	--color-text: oklch(0.97 0.01 278.03 / 0.8);
 	--font-montserrat: "Montserrat", sans-serif;
+	--font-japanese: "Zen Kaku Gothic New", sans-serif;
+	--font-mixed: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 }
