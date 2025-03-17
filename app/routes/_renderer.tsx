@@ -13,13 +13,16 @@ export default jsxRenderer(({ children }) => {
 					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
 					rel="stylesheet"
 				/>
-				<meta name={'twitter:card'} content={'summary'} />
-				<meta name={'og:url'} content={'https://www.nekoyasan.me/'} />
-				<meta name={'og:title'} content={'nekoyasan'} />
-				<meta name={'og:description'} content={"nekoyasan's website"} />
+				<meta property={'twitter:card'} content={'summary'} />
+				<meta property={'og:url'} content={'https://www.nekoyasan.me/'} />
+				<meta property={'og:title'} content={'nekoyasan'} />
+				<meta property={'og:description'} content={"nekoyasan's website"} />
 				<meta name={'description'} content={"nekoyasan's website"} />
-				<meta name={'og:image'} content={'https://www.nekoyasan.me/icon.png'} />
-				<meta name={'og:site_name'} content={'nekoyasan'} />
+				<meta
+					property={'og:image'}
+					content={'https://www.nekoyasan.me/icon.png'}
+				/>
+				<meta property={'og:site_name'} content={'nekoyasan'} />
 				<Link href="/app/style.css" rel="stylesheet" />
 				<Script src="/app/client.ts" async />
 			</head>

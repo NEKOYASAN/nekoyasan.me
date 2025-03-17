@@ -9,6 +9,7 @@ type Frontmatter = {
 	publishedAt: string;
 	emoji: string;
 	color: string;
+	description?: string;
 };
 
 declare module 'hono' {

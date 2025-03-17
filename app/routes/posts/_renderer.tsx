@@ -9,7 +9,7 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 		return (
 			<html lang="ja">
 				<head>
-					<meta charset="utf-8" />
+					<meta charSet="utf-8" />
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
@@ -17,9 +17,19 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 					<title>nekoyasan</title>
 					<link rel="icon" href="/favicon.ico" />
 					<link
-						href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+						href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
 						rel="stylesheet"
 					/>
+					<meta property={'twitter:card'} content={'summary'} />
+					<meta property={'og:url'} content={'https://www.nekoyasan.me/'} />
+					<meta property={'og:title'} content={'nekoyasan'} />
+					<meta property={'og:description'} content={"nekoyasan's website"} />
+					<meta name={'description'} content={"nekoyasan's website"} />
+					<meta
+						property={'og:image'}
+						content={'https://www.nekoyasan.me/icon.png'}
+					/>
+					<meta property={'og:site_name'} content={'nekoyasan'} />
 					<Link href="/app/style.css" rel="stylesheet" />
 					<Script src="/app/client.ts" async />
 				</head>
@@ -76,6 +86,32 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 					href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
 					rel="stylesheet"
 				/>
+				<meta property={'twitter:card'} content={'summary'} />
+				<meta
+					property={'og:url'}
+					content={`https://www.nekoyasan.me${pathname ?? '/'}`}
+				/>
+				<meta
+					property={'og:title'}
+					content={`${frontmatter?.title ?? 'posts'} | nekoyasan`}
+				/>
+				<meta
+					property={'og:description'}
+					content={frontmatter?.description ?? "nekoyasan's website post"}
+				/>
+				<meta
+					name={'description'}
+					content={frontmatter?.description ?? "nekoyasan's website post"}
+				/>
+				<meta
+					property={'og:image'}
+					content={
+						frontmatter?.emoji
+							? `https://www.nekoyasan.me/twemoji/${frontmatter.emoji}.png`
+							: 'https://www.nekoyasan.me/icon.png'
+					}
+				/>
+				<meta property={'og:site_name'} content={'nekoyasan'} />
 				<Link href="/app/style.css" rel="stylesheet" />
 				<Script src="/app/client.ts" async />
 				<script
