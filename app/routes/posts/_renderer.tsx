@@ -2,7 +2,8 @@ import { format } from 'date-fns';
 import { jsxRenderer } from 'hono/jsx-renderer';
 import { Link, Script } from 'honox/server';
 
-export default jsxRenderer(({ children, frontmatter, readingTime }) => {
+export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
+	const pathname = c.req.path;
 	if (!frontmatter || !readingTime) {
 		return (
 			<html lang="ja">
@@ -80,7 +81,7 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 						<div className={'text-gray-600'}>/</div>
 						<div>Posts</div>
 						<div className={'text-gray-600'}>/</div>
-						<div>{frontmatter.navLabel}</div>
+						<a href={pathname}>{frontmatter.navLabel}</a>
 					</div>
 				</header>
 				<div class={'mt-16 mb-8 flex w-full flex-col items-center gap-8'}>
