@@ -54,6 +54,11 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 				/>
 				<Link href="/app/style.css" rel="stylesheet" />
 				<Script src="/app/client.ts" async />
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charSet="utf-8"
+				/>
 			</head>
 			<body class={'bg-gray-900 text-gray-200'}>
 				<header class={'sticky top-0 z-50 w-full bg-gray-900 py-6'}>
