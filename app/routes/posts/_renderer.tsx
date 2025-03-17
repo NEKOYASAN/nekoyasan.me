@@ -1,3 +1,4 @@
+import { tz } from '@date-fns/tz';
 import { format } from 'date-fns';
 import { jsxRenderer } from 'hono/jsx-renderer';
 import { Link, Script } from 'honox/server';
@@ -23,6 +24,28 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 					<Script src="/app/client.ts" async />
 				</head>
 				<body class={'bg-gray-900 text-gray-200'}>
+					<header className={'sticky top-0 z-50 w-full bg-gray-900 py-6'}>
+						<div
+							className={
+								'mx-auto flex max-w-3xl items-center gap-2 px-4 font-semibold sm:px-6'
+							}
+						>
+							<a href={'/'} className={'flex items-center gap-2'}>
+								<img
+									src={'/icon.png'}
+									width={'30px'}
+									height={'30px'}
+									alt={'NEKOYASAN Icon'}
+									className={'size-8 rounded-full'}
+								/>
+								<p>ɴᴇᴋᴏʏᴀsᴀɴ</p>
+							</a>
+							<div className={'text-gray-600'}>/</div>
+							<div>Posts</div>
+							<div className={'text-gray-600'}>/</div>
+							<div>?</div>
+						</div>
+					</header>
 					<div class={'mx-auto max-w-3xl px-4 sm:px-6'}>{children}</div>
 					<footer
 						class={
@@ -102,7 +125,9 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 						}
 					>
 						<time datetime={frontmatter.publishedAt}>
-							{format(frontmatter.publishedAt, 'yyyy/MM/dd')}
+							{format(frontmatter.publishedAt, 'yyyy/MM/dd', {
+								in: tz('Asia/Tokyo'),
+							})}
 						</time>
 						<p>・</p>
 						<p>{readingTime.text}</p>
