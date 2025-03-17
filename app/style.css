@@ -6,3 +6,7 @@
 	--font-japanese: "Zen Kaku Gothic New", sans-serif;
 	--font-mixed: "Montserrat", "Zen Kaku Gothic New", sans-serif;
 }
+
+@view-transition {
+	navigation: auto;
+}

@@ -18,9 +18,15 @@ export default createRoute((c) => {
 					height={'100px'}
 					alt={'NEKOYASAN Icon'}
 					class={'size-20 rounded-full'}
+					style={'view-transition-name: nekoyasan-icon'}
 				/>
 				<div>
-					<h1 class={'font-bold text-4xl'}>ɴᴇᴋᴏʏᴀsᴀɴ</h1>
+					<h1
+						class={'font-bold text-4xl'}
+						style={'view-transition-name: nekoyasan-name'}
+					>
+						ɴᴇᴋᴏʏᴀsᴀɴ
+					</h1>
 					<p class={'font-medium font-montserrat text-gray-400'}>
 						Frontend Engineer
 					</p>
@@ -56,6 +62,10 @@ export default createRoute((c) => {
 				<div className={'mt-4 font-montserrat'}>
 					<div className={'flex flex-col items-start gap-4 font-montserrat'}>
 						{Object.entries(posts).map(([path, { frontmatter }]) => {
+							const viewTransitionId = path
+								.replace(/\.mdx$/, '')
+								.replace('./posts/', 'posts/')
+								.replaceAll('/', '_');
 							return (
 								<a
 									key={path.replace(/\.mdx$/, '')}
@@ -74,10 +84,16 @@ export default createRoute((c) => {
 											width={'40px'}
 											height={'40px'}
 											class={'h-full w-full'}
+											style={`view-transition-name: ${viewTransitionId}_emoji`}
 										/>
 									</div>
 									<div>
-										<p className={'font-medium text-xl'}>{frontmatter.title}</p>
+										<p
+											className={'font-medium text-xl'}
+											style={`view-transition-name: ${viewTransitionId}_title`}
+										>
+											{frontmatter.title}
+										</p>
 										<time
 											className={'text-gray-400 text-sm tracking-wider'}
 											datetime={frontmatter.publishedAt}

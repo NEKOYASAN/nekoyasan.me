@@ -5,6 +5,9 @@ import { Link, Script } from 'honox/server';
 
 export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 	const pathname = c.req.path;
+	const viewTransitionId = pathname
+		.replace('/posts/', 'posts/')
+		.replaceAll('/', '_');
 	if (!frontmatter || !readingTime) {
 		return (
 			<html lang="ja">
@@ -47,8 +50,9 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 									height={'30px'}
 									alt={'NEKOYASAN Icon'}
 									className={'size-8 rounded-full'}
+									style={'view-transition-name: nekoyasan-icon'}
 								/>
-								<p>ɴᴇᴋᴏʏᴀsᴀɴ</p>
+								<p style={'view-transition-name: nekoyasan-name'}>ɴᴇᴋᴏʏᴀsᴀɴ</p>
 							</a>
 							<div className={'text-gray-600'}>/</div>
 							<div>Posts</div>
@@ -136,8 +140,9 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 								height={'30px'}
 								alt={'NEKOYASAN Icon'}
 								className={'size-8 rounded-full'}
+								style={'view-transition-name: nekoyasan-icon'}
 							/>
-							<p>ɴᴇᴋᴏʏᴀsᴀɴ</p>
+							<p style={'view-transition-name: nekoyasan-name'}>ɴᴇᴋᴏʏᴀsᴀɴ</p>
 						</a>
 						<div className={'text-gray-600'}>/</div>
 						<div>Posts</div>
@@ -152,9 +157,13 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 						width={'80px'}
 						height={'80px'}
 						className={'size-20'}
+						style={`view-transition-name: ${viewTransitionId}_emoji`}
 					/>
 
-					<h1 class={'font-montserrat font-semibold text-3xl'}>
+					<h1
+						class={'font-montserrat font-semibold text-3xl'}
+						style={`view-transition-name: ${viewTransitionId}_title`}
+					>
 						{frontmatter.title}
 					</h1>
 					<div
