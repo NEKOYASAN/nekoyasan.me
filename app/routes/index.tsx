@@ -79,7 +79,7 @@ export default createRoute((c) => {
 									<div>
 										<p className={'font-medium text-xl'}>{frontmatter.title}</p>
 										<time
-											className={'text-gray-400 text-sm tracking-wide'}
+											className={'text-gray-400 text-sm tracking-wider'}
 											datetime={frontmatter.publishedAt}
 										>
 											{format(frontmatter.publishedAt, 'yyyy/MM/dd')}
