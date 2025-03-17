@@ -7,6 +7,7 @@ type Frontmatter = {
 	title: string;
 	navLabel?: string;
 	publishedAt: string;
+	ogpImage?: string;
 	emoji: string;
 	color: string;
 	description?: string;

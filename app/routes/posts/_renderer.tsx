@@ -106,9 +106,11 @@ export default jsxRenderer(({ children, frontmatter, readingTime }, c) => {
 				<meta
 					property={'og:image'}
 					content={
-						frontmatter?.emoji
-							? `https://www.nekoyasan.me/twemoji/${frontmatter.emoji}.png`
-							: 'https://www.nekoyasan.me/icon.png'
+						frontmatter?.ogpImage
+							? `https://www.nekoyasan.me${frontmatter.ogpImage}`
+							: frontmatter?.emoji
+								? `https://www.nekoyasan.me/twemoji/${frontmatter.emoji}.png`
+								: 'https://www.nekoyasan.me/icon.png'
 					}
 				/>
 				<meta property={'og:site_name'} content={'nekoyasan'} />

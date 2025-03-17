@@ -20,7 +20,7 @@ export default jsxRenderer(({ children }) => {
 				<meta name={'description'} content={"nekoyasan's website"} />
 				<meta
 					property={'og:image'}
-					content={'https://www.nekoyasan.me/icon.png'}
+					content={'https://www.nekoyasan.me/ogp.png'}
 				/>
 				<meta property={'og:site_name'} content={'nekoyasan'} />
 				<Link href="/app/style.css" rel="stylesheet" />
