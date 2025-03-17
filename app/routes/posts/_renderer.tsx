@@ -111,7 +111,10 @@ export default jsxRenderer(({ children, frontmatter, readingTime }) => {
 						style={`background-color: ${frontmatter.color}`}
 					/>
 				</div>
-				<div class={'mx-auto my-16 max-w-3xl px-4 font-mixed sm:px-6'}>
+				<div
+					class={'mx-auto my-16 max-w-3xl px-4 font-mixed sm:px-6'}
+					style={`--post-key-color: ${frontmatter.color ?? '#3EA8FF'}`}
+				>
 					{children}
 				</div>
 				<footer

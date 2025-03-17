@@ -97,5 +97,39 @@ export const useMDXComponents: UseMdxComponents = () => {
 				</code>
 			);
 		},
+		a: ({ children, className, ...props }) => {
+			return (
+				<a
+					{...props}
+					className={twMerge(
+						' font-semibold text-(--post-key-color) underline underline-offset-2 hover:no-underline hover:opacity-90',
+						className,
+					)}
+				>
+					{children}
+				</a>
+			);
+		},
+		ul: ({ children, className, ...props }) => {
+			return (
+				<ul {...props} className={twMerge('list-disc pl-6', className)}>
+					{children}
+				</ul>
+			);
+		},
+		ol: ({ children, className, ...props }) => {
+			return (
+				<ol {...props} className={twMerge('list-decimal pl-6', className)}>
+					{children}
+				</ol>
+			);
+		},
+		li: ({ children, className, ...props }) => {
+			return (
+				<li {...props} className={twMerge('my-1', className)}>
+					{children}
+				</li>
+			);
+		},
 	};
 };
