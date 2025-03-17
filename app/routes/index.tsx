@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import { createRoute } from 'honox/factory';
 import { Changelogs } from '../components/Changelogs';
 import type { Frontmatter } from '../global';
@@ -52,143 +53,41 @@ export default createRoute((c) => {
 					Posts
 				</h3>
 
-				<div className={'relative mt-4 font-montserrat'}>
-					<div
-						className={
-							'flex flex-col items-start gap-4 font-montserrat opacity-20'
-						}
-					>
-						<div className={'group flex items-center gap-4'}>
-							<div
-								className={
-									'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-gray-400 transition-[outline]'
-								}
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 36 36"
-									className={'h-full w-full'}
+				<div className={'mt-4 font-montserrat'}>
+					<div className={'flex flex-col items-start gap-4 font-montserrat'}>
+						{Object.entries(posts).map(([path, { frontmatter }]) => {
+							return (
+								<a
+									key={path.replace(/\.mdx$/, '')}
+									href={path.replace(/\.mdx$/, '')}
+									className={'group flex items-center gap-4'}
 								>
-									<title>❓</title>
-									<path
-										fill="#99a1af"
-										d="M17 27c-1.657 0-3-1.343-3-3v-4c0-1.657 1.343-3 3-3 .603-.006 6-1 6-5 0-2-2-4-5-4-2.441 0-4 2-4 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-4.878 4.58-9 10-9 8 0 11 5.982 11 11 0 4.145-2.277 7.313-6.413 8.92-.9.351-1.79.587-2.587.747V24c0 1.657-1.343 3-3 3z"
-									/>
-									<circle fill="#99a1af" cx="17" cy="32" r="3" />
-								</svg>
-							</div>
-							<div className={'flex flex-col gap-2'}>
-								<div
-									className={'h-4 w-[50vw] max-w-72 rounded-full bg-gray-400'}
-								/>
-								<div
-									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
-								/>
-							</div>
-						</div>
-						<div className={'group flex items-center gap-4'}>
-							<div
-								className={
-									'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-gray-400 transition-[outline]'
-								}
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 36 36"
-									className={'h-full w-full'}
-								>
-									<title>❓</title>
-									<path
-										fill="#99a1af"
-										d="M17 27c-1.657 0-3-1.343-3-3v-4c0-1.657 1.343-3 3-3 .603-.006 6-1 6-5 0-2-2-4-5-4-2.441 0-4 2-4 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-4.878 4.58-9 10-9 8 0 11 5.982 11 11 0 4.145-2.277 7.313-6.413 8.92-.9.351-1.79.587-2.587.747V24c0 1.657-1.343 3-3 3z"
-									/>
-									<circle fill="#99a1af" cx="17" cy="32" r="3" />
-								</svg>
-							</div>
-							<div className={'flex flex-col gap-2'}>
-								<div
-									className={'h-4 w-[62vw] max-w-96 rounded-full bg-gray-400'}
-								/>
-								<div
-									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
-								/>
-							</div>
-						</div>
-						<div className={'group flex items-center gap-4'}>
-							<div
-								className={
-									'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-gray-400 transition-[outline]'
-								}
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 36 36"
-									className={'h-full w-full'}
-								>
-									<title>❓</title>
-									<path
-										fill="#99a1af"
-										d="M17 27c-1.657 0-3-1.343-3-3v-4c0-1.657 1.343-3 3-3 .603-.006 6-1 6-5 0-2-2-4-5-4-2.441 0-4 2-4 3 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-4.878 4.58-9 10-9 8 0 11 5.982 11 11 0 4.145-2.277 7.313-6.413 8.92-.9.351-1.79.587-2.587.747V24c0 1.657-1.343 3-3 3z"
-									/>
-									<circle fill="#99a1af" cx="17" cy="32" r="3" />
-								</svg>
-							</div>
-							<div className={'flex flex-col gap-2'}>
-								<div
-									className={'h-4 w-[42vw] max-w-42 rounded-full bg-gray-400'}
-								/>
-								<div
-									className={'h-3 w-[20vw] max-w-20 rounded-full bg-gray-600'}
-								/>
-							</div>
-						</div>
-						{/*Object.entries(posts).map(([path, { frontmatter }]) => {
-						return (
-							<a
-								key={path.replace(/\.mdx$/, '')}
-								href={path.replace(/\.mdx$/, '')}
-								className={'group flex items-center gap-4'}
-							>
-								<div
-									className={
-										'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-[#3EA8FF] transition-[outline] group-hover:outline-2'
-									}
-									style={`outline-color: ${frontmatter.color}`}
-								>
-									<img
-										src={`/twemoji/${frontmatter.emoji}.svg`}
-										alt={frontmatter.emoji}
-										width={'40px'}
-										height={'40px'}
-										class={'h-full w-full'}
-									/>
-								</div>
-								<div>
-									<p className={'font-medium text-xl'}>{frontmatter.title}</p>
-									<time
-										className={'text-gray-400 text-sm tracking-wide'}
-										datetime={frontmatter.publishedAt}
+									<div
+										className={
+											'flex size-18 items-center justify-center rounded-2xl bg-white/10 p-4 outline outline-[#3EA8FF] transition-[outline] group-hover:outline-2'
+										}
+										style={`outline-color: ${frontmatter.color}`}
 									>
-										{format(frontmatter.publishedAt, 'yyyy/MM/dd')}
-									</time>
-								</div>
-							</a>
-						);
-					})*/}
-					</div>
-
-					<div
-						className={
-							'absolute inset-0 font-semibold text-gray-400 opacity-70'
-						}
-					>
-						<div
-							className={
-								'-translate-y-1/2 absolute top-1/2 left-1/9 rotate-12 text-2xl'
-							}
-						>
-							🚧 Under construction...
-						</div>
+										<img
+											src={`/twemoji/${frontmatter.emoji}.svg`}
+											alt={frontmatter.emoji}
+											width={'40px'}
+											height={'40px'}
+											class={'h-full w-full'}
+										/>
+									</div>
+									<div>
+										<p className={'font-medium text-xl'}>{frontmatter.title}</p>
+										<time
+											className={'text-gray-400 text-sm tracking-wide'}
+											datetime={frontmatter.publishedAt}
+										>
+											{format(frontmatter.publishedAt, 'yyyy/MM/dd')}
+										</time>
+									</div>
+								</a>
+							);
+						})}
 					</div>
 				</div>
 			</div>
